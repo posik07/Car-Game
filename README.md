@@ -7,8 +7,8 @@ lai sasniegtu labaku rezultātu attēlu ievietošana ir
 veic pēc iespējas ātrāk.
 
 **Darāmo darbu saraksts:**
-- [ ] Izkārtot spēles laikumu (karte) un izvietot automašīnas
-- [ ] Izstrādāt DragAndDrop sktiptu
+- [x] Izkārtot spēles laikumu (karte) un izvietot automašīnas
+- [x] Izstrādāt DragAndDrop sktiptu
 - [ ] Ieviest skaņas efektus un mūziku
 - [ ] Izstrādāt Transformācijas skriptu (izmērs, rotācija)
 - [ ] Izstrādāt kameras skriptu (pietuvināt/attālināt)
