@@ -9,9 +9,9 @@ veic pēc iespējas ātrāk.
 **Darāmo darbu saraksts:**
 - [x] Izkārtot spēles laikumu (karte) un izvietot automašīnas
 - [x] Izstrādāt DragAndDrop sktiptu
-- [ ] Ieviest skaņas efektus un mūziku
-- [ ] Izstrādāt Transformācijas skriptu (izmērs, rotācija)
-- [ ] Izstrādāt kameras skriptu (pietuvināt/attālināt)
+- [x] Ieviest skaņas efektus un mūziku
+- [x] Izstrādāt Transformācijas skriptu (izmērs, rotācija)
+- [x] Izstrādāt kameras skriptu (pietuvināt/attālināt)
 - [ ] Izstrādāt sākuma ainu
 - [ ] Ieviest taimeri
 - [ ] Izstrādāt uzvaras logu un zvaigžņu sistēmu

@@ -624,6 +624,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -708,6 +709,22 @@ Transform:
   - {fileID: 279741607}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f7e2728c54bc245827a6f3f53faaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxZoom: 300
+  minZoom: 150
+  followSpeed: 5
+  cam: {fileID: 519420031}
 --- !u!1 &877609068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,6 +1017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1371525526}
   - component: {fileID: 1371525527}
+  - component: {fileID: 1371525528}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -1049,6 +1067,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 19dfb96614bdfee428499bc6962b86da, type: 3}
   rightPlace: 0
   lastDragged: {fileID: 0}
+--- !u!114 &1371525528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371525525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c87bddb1afbe194aa56dc2bf8d4b0e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 0}
 --- !u!1 &1458750195
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,7 +1095,7 @@ GameObject:
   - component: {fileID: 1458750199}
   m_Layer: 5
   m_Name: GarbageTruck
-  m_TagString: Untagged
+  m_TagString: Garbage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
