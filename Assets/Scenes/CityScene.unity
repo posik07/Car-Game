@@ -346,9 +346,10 @@ GameObject:
   - component: {fileID: 232861130}
   - component: {fileID: 232861132}
   - component: {fileID: 232861131}
+  - component: {fileID: 232861133}
   m_Layer: 5
   m_Name: GarbageTruckBack
-  m_TagString: Untagged
+  m_TagString: Garbage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,7 +370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 825, y: -490}
+  m_AnchoredPosition: {x: 748, y: 10}
   m_SizeDelta: {x: 90, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232861131
@@ -410,6 +411,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232861129}
   m_CullTransparentMesh: 1
+--- !u!114 &232861133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232861129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcad5f9c5da3a42a3f03642e163e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 1371525527}
 --- !u!1 &236511917
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +435,7 @@ GameObject:
   - component: {fileID: 236511918}
   - component: {fileID: 236511920}
   - component: {fileID: 236511919}
+  - component: {fileID: 236511921}
   m_Layer: 5
   m_Name: BusBack
   m_TagString: School
@@ -485,6 +500,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236511917}
   m_CullTransparentMesh: 1
+--- !u!114 &236511921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236511917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcad5f9c5da3a42a3f03642e163e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 1371525527}
 --- !u!1 &279741606
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +971,7 @@ GameObject:
   - component: {fileID: 1075484387}
   - component: {fileID: 1075484389}
   - component: {fileID: 1075484388}
+  - component: {fileID: 1075484390}
   m_Layer: 5
   m_Name: AtraPalBack
   m_TagString: Ambulance
@@ -1007,6 +1036,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075484386}
   m_CullTransparentMesh: 1
+--- !u!114 &1075484390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075484386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcad5f9c5da3a42a3f03642e163e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 1371525527}
 --- !u!1 &1371525525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,6 +1060,7 @@ GameObject:
   - component: {fileID: 1371525526}
   - component: {fileID: 1371525527}
   - component: {fileID: 1371525528}
+  - component: {fileID: 1371525529}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -1053,7 +1096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   garbageTruck: {fileID: 1458750195}
-  schoolBus: {fileID: 0}
+  schoolBus: {fileID: 2106005083}
   ambulance: {fileID: 57993733}
   gTruckPos: {x: 0, y: 0}
   sBussPos: {x: 0, y: 0}
@@ -1079,7 +1122,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c87bddb1afbe194aa56dc2bf8d4b0e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 0}
+  objectScript: {fileID: 1371525527}
+--- !u!114 &1371525529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371525525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcad5f9c5da3a42a3f03642e163e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 1371525527}
 --- !u!1 &1458750195
 GameObject:
   m_ObjectHideFlags: 0

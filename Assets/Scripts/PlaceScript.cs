@@ -50,7 +50,7 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                             objectScript.audioSource.PlayOneShot(objectScript.audioClip[2]);
                             break;
                         case "Ambulance":
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClip[0]);
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClip[4]);
                             break;
                         case "School":
                             objectScript.audioSource.PlayOneShot(objectScript.audioClip[3]);
