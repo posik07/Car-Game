@@ -7,7 +7,7 @@ public class SceneChangeScript : MonoBehaviour
 {
     public void ToUIScene()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene("CityScene", LoadSceneMode.Single);
     }
 
     public void ToMainMenue()
