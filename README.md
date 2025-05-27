@@ -15,5 +15,7 @@ veic pēc iespējas ātrāk.
 - [x] Izstrādāt sākuma ainu
 - [x] Ieviest taimeri
 - [x] Izstrādāt uzvaras logu un zvaigžņu sistēmu
-- [ ] Papildināt spēles loģiku
-- [ ] Izstrādāt otro līmeni
+- [X] Papildināt spēles loģiku
+- [X] Izstrādāt otro līmeni
+
+
