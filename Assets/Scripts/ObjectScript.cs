@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,7 +38,7 @@ public class ObjectScript : MonoBehaviour
     [HideInInspector] public bool rightPlace = false;
     public GameObject lastDragged = null;
 
-    public int totalCars = 12; // Общее количество машинок (укажи здесь своё число)
+    public int totalCars = 12; // РћР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РјР°С€РёРЅРѕРє (СѓРєР°Р¶Рё Р·РґРµСЃСЊ СЃРІРѕС‘ С‡РёСЃР»Рѕ)
     private bool levelFinished = false;
 
     private GameManager gameManager;
@@ -66,14 +66,14 @@ public class ObjectScript : MonoBehaviour
         if (!levelFinished && carsPlacedCorrectly >= totalCars)
         {
             levelFinished = true;
-            Debug.Log("Все машинки на местах! Победа!");
+            Debug.Log("Visas maЕЎinas uz vietas!");
             if (gameManager != null)
             {
                 gameManager.OnAllCarsPlaced();
             }
             else
             {
-                Debug.LogError("GameManager не найден!");
+                Debug.LogError("GameManager nav atrasts!");
             }
         }
     }

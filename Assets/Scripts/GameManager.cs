@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text timerText;
 
     public Image starImage; // “олько один Image дл€ звезды
-    public Sprite star1Sprite, star2Sprite, star3Sprite, star4Sprite;
+    public Sprite star1Sprite, star2Sprite, star3Sprite;
 
     public float[] starThresholds = { 60f, 120f }; // <60 Ч 3 звезды, <120 Ч 2, иначе 1
 
