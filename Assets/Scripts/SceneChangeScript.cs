@@ -14,9 +14,21 @@ public class SceneChangeScript : MonoBehaviour
     {
         SceneManager.LoadScene("Menue", LoadSceneMode.Single);
     }
+    public void LoadSecondLevel()
+    {
+        SceneManager.LoadScene("2Level", LoadSceneMode.Single);
+    }
 
     public void Quit()
     {
         Application.Quit();
+    }
+    public void RestartCityScene()
+    {
+        SceneManager.LoadScene("CityScene", LoadSceneMode.Single);
+    }
+    public void RestartCity2Scene()
+    {
+        SceneManager.LoadScene("2Level", LoadSceneMode.Single);
     }
 }

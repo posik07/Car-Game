@@ -17,38 +17,31 @@ public class ObjectScript : MonoBehaviour
     public GameObject eskavators;
     public GameObject ugunsDzeseji;
 
+    [HideInInspector] public Vector2 gTruckPos;
+    [HideInInspector] public Vector2 sBussPos;
+    [HideInInspector] public Vector2 ambulancePos;
+    [HideInInspector] public Vector2 traktors1Pos;
+    [HideInInspector] public Vector2 traktors5Pos;
+    [HideInInspector] public Vector2 policePos;
+    [HideInInspector] public Vector2 b2mashinaPos;
+    [HideInInspector] public Vector2 cementaPos;
+    [HideInInspector] public Vector2 e46mashinaPos;
+    [HideInInspector] public Vector2 e61mashinaPos;
+    [HideInInspector] public Vector2 eskavatorsPos;
+    [HideInInspector] public Vector2 ugunsDzesejiPos;
 
     [HideInInspector]
-    public Vector2 gTruckPos;
-    [HideInInspector]
-    public Vector2 sBussPos;
-    [HideInInspector]
-    public Vector2 ambulancePos;
-    [HideInInspector]
-    public Vector2 traktors1Pos;
-    [HideInInspector]
-    public Vector2 traktors5Pos;
-    [HideInInspector]
-    public Vector2 policePos;
-    [HideInInspector]
-    public Vector2 b2mashinaPos;
-    [HideInInspector]
-    public Vector2 cementaPos;
-    [HideInInspector]
-    public Vector2 e46mashinaPos;
-    [HideInInspector]
-    public Vector2 e61mashinaPos;
-    [HideInInspector]
-    public Vector2 eskavatorsPos;
-    [HideInInspector]
-    public Vector2 ugunsDzesejiPos;
+    public int carsPlacedCorrectly = 0;
 
     public AudioSource audioSource;
     public AudioClip[] audioClip;
-    [HideInInspector]
-    public bool rightPlace = false;
+    [HideInInspector] public bool rightPlace = false;
     public GameObject lastDragged = null;
 
+    public int totalCars = 12; // Общее количество машинок (укажи здесь своё число)
+    private bool levelFinished = false;
+
+    private GameManager gameManager;
 
     private void Start()
     {
@@ -64,5 +57,24 @@ public class ObjectScript : MonoBehaviour
         e61mashinaPos = e61mashina.GetComponent<RectTransform>().localPosition;
         eskavatorsPos = eskavators.GetComponent<RectTransform>().localPosition;
         ugunsDzesejiPos = ugunsDzeseji.GetComponent<RectTransform>().localPosition;
+
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
+    private void Update()
+    {
+        if (!levelFinished && carsPlacedCorrectly >= totalCars)
+        {
+            levelFinished = true;
+            Debug.Log("Все машинки на местах! Победа!");
+            if (gameManager != null)
+            {
+                gameManager.OnAllCarsPlaced();
+            }
+            else
+            {
+                Debug.LogError("GameManager не найден!");
+            }
+        }
     }
 }

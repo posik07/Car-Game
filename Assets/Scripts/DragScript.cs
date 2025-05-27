@@ -55,13 +55,13 @@ public class DragScript : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (Input.GetMouseButtonUp(0)) 
-        { 
+        if (Input.GetMouseButtonUp(0))
+        {
             Debug.Log("Dragging ended: " + gameObject.name);
             objectScript.lastDragged = eventData.pointerDrag;
             canvasGroup.alpha = 1f;
 
-            if(objectScript.rightPlace == false)
+            if (objectScript.rightPlace == false)
             {
                 canvasGroup.blocksRaycasts = true;
                 objectScript.audioSource.PlayOneShot(objectScript.audioClip[1]);
@@ -69,9 +69,12 @@ public class DragScript : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
             else
             {
                 objectScript.lastDragged = null;
+                // Не сбрасываем rightPlace!
+                return; // выходим, не сбрасывая ничего
             }
 
-            objectScript.rightPlace = false;
+            objectScript.rightPlace = false; // сброс только если НЕ правильно
         }
     }
+
 }

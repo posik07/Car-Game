@@ -9,12 +9,17 @@ public class PlaceScript : MonoBehaviour, IDropHandler
     private Vector2 placeSize, carSize;
     private float xSizeDif, ySizeDif;
     public ObjectScript objectScript;
+    public bool rightPlace = false;
+
 
     public void OnDrop(PointerEventData eventData)
     {
         if ((eventData.pointerDrag != null) && Input.GetMouseButtonUp(0)
             && Input.GetMouseButton(2) == false)
         {
+            // Сохраняем предыдущее состояние
+            bool wasRightPlace = this.rightPlace;
+
             if (eventData.pointerDrag.tag.Equals(tag))
             {
                 placeZRotation =
@@ -28,14 +33,24 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                 placeSize = eventData.pointerDrag.GetComponent<RectTransform>().localScale;
                 carSize = GetComponent<RectTransform>().localScale;
                 xSizeDif = Mathf.Abs(placeSize.x - carSize.x);
-                ySizeDif = Mathf.Abs(ySizeDif - carSize.y);
+                ySizeDif = Mathf.Abs(placeSize.y - carSize.y);
                 Debug.Log("Dif X Size: " + xSizeDif + " Dif Y Size: " + ySizeDif);
 
                 if ((difZRotation <= 5 || (difZRotation >= 355 && difZRotation <= 360))
                     && (xSizeDif <= 0.1 && ySizeDif <= 0.1))
                 {
                     Debug.Log("Right Place");
-                    objectScript.rightPlace = true;
+                    this.rightPlace = true;
+                    
+
+                    // Увеличиваем счётчик, если раньше объект был не на месте
+                    if (!wasRightPlace)
+                    {
+                        objectScript.carsPlacedCorrectly++;
+                        Debug.Log("Cars Placed Correctly: " + objectScript.carsPlacedCorrectly);
+
+                        
+                    }
 
                     eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
                         GetComponent<RectTransform>().anchoredPosition; // iecentrē pozīciju
@@ -88,11 +103,28 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                             break;
                     }
                 }
+                else
+                {
+                    // Если объект был на правильном месте, но теперь нет — уменьшаем счётчик
+                    if (wasRightPlace)
+                    {
+                        objectScript.carsPlacedCorrectly--;
+                        Debug.Log("Cars Placed Correctly: " + objectScript.carsPlacedCorrectly);
+                    }
 
+                    this.rightPlace = false;
+                }
             }
             else
             {
-                objectScript.rightPlace = false;
+                // Если был на месте, а теперь поставлен не туда — уменьшаем счётчик
+                if (wasRightPlace)
+                {
+                    objectScript.carsPlacedCorrectly--;
+                    Debug.Log("Cars Placed Correctly: " + objectScript.carsPlacedCorrectly);
+                }
+
+                this.rightPlace = false;
                 objectScript.audioSource.PlayOneShot(objectScript.audioClip[1]);
 
                 switch (eventData.pointerDrag.tag)
@@ -138,8 +170,6 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                         Debug.LogError("Unknown tag!");
                         break;
                 }
-
-
             }
         }
     }
